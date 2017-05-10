@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body{
   /*background: linear-gradient(0deg, white, blue);*/
   font-family: georgia;
@@ -43,6 +52,14 @@ main {
 main h2 {
   font-size: 35px;
   color: #40506b;
+}
+
+.resume {
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 main h3{
