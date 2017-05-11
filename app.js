@@ -1,9 +1,13 @@
 'use strict';
+var correctAnswers = [];
+
+correctAnswers.push();
 
 var name = prompt('Is my name Andy? Y/N').toLowerCase();
 
 if (name === 'y' || name === 'yes'){
   var correct1 = true;
+  correctAnswers.push(correct1);
 }else {
   var correct1 = false;
 };
@@ -15,6 +19,7 @@ var age = prompt('Am I turning 25 on Thursday the 11th? Y/N').toLowerCase();
 
 if (age === 'y' || age === 'yes'){
   var correct2 = true;
+  correctAnswers.push(correct2);
 }else {
   var correct2 = false;
 };
@@ -34,6 +39,7 @@ var born = prompt('Was I born in Seattle? Y/N').toLowerCase();
 
 if (born === 'n' || born === 'no'){
   var correct3 = true;
+  correctAnswers.push(correct3);
 }else {
   var correct3 = false;
 };
@@ -45,6 +51,7 @@ var school = prompt('Did I go to school at Whitman? Y/N').toLowerCase();
 
 if (school === 'y' || school === 'yes'){
   var correct4 = true;
+  correctAnswers.push(correct4);
 }else {
   var correct4 = false;
 };
@@ -56,6 +63,7 @@ var food = prompt('Is my favorite food tacos? Y/N').toLowerCase();
 
 if (food === 'n' || food === 'no'){
   var correct5 = true;
+  correctAnswers.push(correct5);
 }else{
   var correct5 = false;
 };
@@ -93,15 +101,18 @@ while(numberGuess !== number && counter <= 3){
   if (number < numberGuess) {
     alert('you guessed too high, try again!');
     counter++;
-    alert('You have ' + tries + ' tries left');
     tries--;
+    alert('You have ' + tries + ' tries left');
   }else if (number > numberGuess) {
     alert('you guessed too low, try again!');
     counter++;
+    tries--;
     alert('You have ' + tries + ' tries left');
-    tries--
   }else if(number === NaN){
-    alert('that\'s not a number dumbass, try again');
+    alert('that\'s not a number dumbass, try again,');
+    counter++;
+    tries--;
+    alert('You have ' + tries + ' tries left')
   }
 }
 
@@ -112,6 +123,7 @@ if (numberGuess !== number){
 }else{
   alert('Wow! You got it right! And you had ' + tries + ' tries left');
   var correct6 = true
+  correctAnswers.push(correct6);
 };
 
 //array guessing game
@@ -126,10 +138,11 @@ while(hobbiesCounter < 6){
       alert('Well done! I love ' + hobbiesAnswer);
       hobbiesCounter = 6
       var correct7=true;
+      correctAnswers.push(correct7);
       break;
     }
   }
-  hobbiesCounter++
+  hobbiesCounter++;
   if(hobbiesCounter < 6){
     alert('try again');
   }
@@ -137,7 +150,8 @@ console.log(hobbiesAnswer);
 console.log(hobbiesCounter);
 }
 
+console.log(correctAnswers);
 
-var answers = [correct1, correct2, correct3, correct4, correct5, correct6, correct7];
+var numberCorrect = correctAnswers.length;
 
-console.log(answers)
+alert('Thanks for taking my quiz ' + userName + '. You got ' + numberCorrect + ' out of 7 correct answers!');
