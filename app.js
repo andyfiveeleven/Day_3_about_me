@@ -76,7 +76,11 @@ if (correct1 && correct2 && correct3 && correct4 && correct5){
   alert('You didn\'t get much right... Better luck next time bud....');
 };
 
-alert('Okay, now that you learned some stuff about me, let\'s play a game');
+var userName = prompt('Now that you know who I am, what\'s your name?');
+
+alert('Okay ' + userName + ', now that we know about eachother, let\'s play a game');
+
+//number guessing game
 
 var numberGuess;
 var number = Math.floor(Math.random() * 10) + 1;
@@ -84,7 +88,7 @@ var counter = 1 ;
 var tries = 3;
 
 while(numberGuess !== number && counter <= 3){
-  var numberGuess = parseInt(prompt('I\'m thinking of a number between one and ten, it\'s random, what do you think?'));
+  var numberGuess = parseInt(prompt(userName + ', I\'m thinking of a number between one and ten, it\'s random, what do you think?'));
 
   if (number < numberGuess) {
     alert('you guessed too high, try again!');
@@ -108,4 +112,36 @@ if (numberGuess !== number){
   alert('Fail, you ran out of tries');
 }else{
   alert('Wow! You got it right! And you had ' + tries + ' tries left');
+  var correct6 = true
 };
+
+//array guessing game
+var hobbies = ['carpentry', 'cocktails', 'cooking', 'camping', 'code'];
+var hobbiesCounter = 0
+
+while(hobbiesCounter < 6){
+  var hobbiesAnswer = prompt('Can you guess one of my hobbies?').toLowerCase();
+  for(var i=0; i<hobbies.length; i++){
+    console.log(hobbies);
+    if(hobbiesAnswer === hobbies[i]){
+      alert('Well done! I love ' + hobbiesAnswer);
+      hobbiesCounter = 6
+      var correct7=true;
+      break;
+    }
+  }
+  hobbiesCounter++
+  if(hobbiesCounter < 6){
+    alert('try again');
+  }
+console.log(hobbiesAnswer);
+console.log(hobbiesCounter);
+}
+
+if(hobbiesCounter >= 6){
+  alert('out of tries');
+}
+
+var answers = [correct1, correct2, correct3, correct4, correct5, correct6, correct7];
+
+console.log(answers)
