@@ -1,21 +1,62 @@
 'use strict';
-var correctAnswers = [];
 
-correctAnswers.push();
+var userResponse = ['y', 'yes', 'n', 'no'];
+var answerKey = [true, true, false, true, false];
 
-var name = prompt('Is my name Andy? Y/N').toLowerCase();
+var questions = [
+  'Is my name Andy',
+  'Am I turning 25 on Thursday the 11th',
+  'Was I born in Seattle',
+  'Did I go to school at Whitman',
+  'Do I like tacos'
+];
+
+var userAnswers = [];
+var correctCounter = 0;
+
+for (var i = 0; i < questions.length; i++) {
+  var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
+  console.log('user response:', userInput);
+
+  if (userInput === 'yes' || userInput === 'y') {
+    userAnswers.push(true);
+  } else if (userInput === 'no' || userInput === 'n') {
+    userAnswers.push(false);
+  } else {
+    alert('You can\'t read!');
+    userAnswers.push(0);
+  }
+}
+
+for (var i = 0; i < userAnswers.length; i++) {
+  if (userAnswers[i] === answerKey[i]) {
+    correctCounter++;
+    
+  }
+}
+
+
+
+  // userAnswers.push(userResponse.includes(userInput));
+
+//   if (userResponse.includes(userInput) === answerKey[for loop]) {
+//
+//   }
+// }
+
+
+// var name = prompt('Is my name Andy? Y/N').toLowerCase();
 
 if (name === 'y' || name === 'yes'){
   var correct1 = true;
   correctAnswers.push(correct1);
-}else {
+} else {
   correct1 = false;
 }
 
 console.log('Name correct? ' + correct1);
 
-
-var age = prompt('Am I turning 25 on Thursday the 11th? Y/N').toLowerCase();
+// var age = prompt('Am I turning 25 on Thursday the 11th? Y/N').toLowerCase();
 
 if (age === 'y' || age === 'yes'){
   var correct2 = true;
@@ -35,7 +76,7 @@ if (correct1 && correct2){
 alert('Ok, let\s make this a bit harder now.');
 
 
-var born = prompt('Was I born in Seattle? Y/N').toLowerCase();
+// var born = prompt('Was I born in Seattle? Y/N').toLowerCase();
 
 if (born === 'n' || born === 'no'){
   var correct3 = true;
@@ -47,7 +88,7 @@ if (born === 'n' || born === 'no'){
 console.log('Born correct? ' + correct3);
 
 
-var school = prompt('Did I go to school at Whitman? Y/N').toLowerCase();
+// var school = prompt('Did I go to school at Whitman? Y/N').toLowerCase();
 
 if (school === 'y' || school === 'yes'){
   var correct4 = true;
@@ -59,7 +100,7 @@ if (school === 'y' || school === 'yes'){
 console.log('School correct? ' + correct4);
 
 
-var food = prompt('Is my favorite food tacos? Y/N').toLowerCase();
+// var food = prompt('Is my favorite food tacos? Y/N').toLowerCase();
 
 if (food === 'n' || food === 'no'){
   var correct5 = true;
