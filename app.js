@@ -9,8 +9,8 @@ if (name === 'y' || name === 'yes'){
   var correct1 = true;
   correctAnswers.push(correct1);
 }else {
-  var correct1 = false;
-};
+  correct1 = false;
+}
 
 console.log('Name correct? ' + correct1);
 
@@ -20,17 +20,17 @@ var age = prompt('Am I turning 25 on Thursday the 11th? Y/N').toLowerCase();
 if (age === 'y' || age === 'yes'){
   var correct2 = true;
   correctAnswers.push(correct2);
-}else {
-  var correct2 = false;
-};
+} else {
+  correct2 = false;
+}
 
 console.log('Age correct? ' + correct2);
 
 if (correct1 && correct2){
   alert('Phew! My identity is intact! You got me pegged!');
-}else {
+} else {
   alert('You still have a bit to learn about me, my name is Andy and i\'ll soon be 25!');
-};
+}
 
 alert('Ok, let\s make this a bit harder now.');
 
@@ -40,9 +40,9 @@ var born = prompt('Was I born in Seattle? Y/N').toLowerCase();
 if (born === 'n' || born === 'no'){
   var correct3 = true;
   correctAnswers.push(correct3);
-}else {
-  var correct3 = false;
-};
+} else {
+  correct3 = false;
+}
 
 console.log('Born correct? ' + correct3);
 
@@ -53,8 +53,8 @@ if (school === 'y' || school === 'yes'){
   var correct4 = true;
   correctAnswers.push(correct4);
 }else {
-  var correct4 = false;
-};
+  correct4 = false;
+}
 
 console.log('School correct? ' + correct4);
 
@@ -65,8 +65,8 @@ if (food === 'n' || food === 'no'){
   var correct5 = true;
   correctAnswers.push(correct5);
 }else{
-  var correct5 = false;
-};
+  correct5 = false;
+}
 
 console.log('Food correct? ' + correct5);
 
@@ -74,7 +74,7 @@ if (correct3 && correct4 && correct5){
   alert('Let\'s see how you did with those harder questions....  You were right! I was born in Minneapolis, I went to school at Whitman, and I like Whiskey just slightly more than tacos!');
 }else{
   alert('Let\'s see how you did with those harder questions.... You got some things wrong, just to review, I was born in Minneapolis, I went to school at Whitman, and I like Whiskey just slightly more than tacos!' );
-};
+}
 
 if (correct1 && correct2 && correct3 && correct4 && correct5){
   alert('Wow! You know a lot about me! That\'s kinda creepy!');
@@ -82,7 +82,7 @@ if (correct1 && correct2 && correct3 && correct4 && correct5){
   alert('Well, at least you got some of the basics right....');
 }else {
   alert('You didn\'t get much right... Better luck next time bud....');
-};
+}
 
 var userName = prompt('Now that you know who I am, what\'s your name?');
 
@@ -96,7 +96,7 @@ var counter = 1 ;
 var tries = 3;
 
 while(numberGuess !== number && counter <= 3){
-  var numberGuess = parseInt(prompt(userName + ', I\'m thinking of a number between one and ten, it\'s random, what do you think?'));
+  numberGuess = parseInt(prompt(userName + ', I\'m thinking of a number between one and ten, it\'s random, what do you think?'));
 
   if (number < numberGuess) {
     alert('you guessed too high, try again!');
@@ -108,27 +108,28 @@ while(numberGuess !== number && counter <= 3){
     counter++;
     tries--;
     alert('You have ' + tries + ' tries left');
-  }else if(number === NaN){
+  }else if(number === isNaN){
     alert('that\'s not a number dumbass, try again,');
     counter++;
     tries--;
-    alert('You have ' + tries + ' tries left')
+    alert('You have ' + tries + ' tries left');
   }
 }
 
 console.log('counter: ', counter);
 
+var correct6;
 if (numberGuess !== number){
   alert('Fail, you ran out of tries');
 }else{
   alert('Wow! You got it right! And you had ' + tries + ' tries left');
-  var correct6 = true
+  correct6 = true;
   correctAnswers.push(correct6);
-};
+}
 
 //array guessing game
 var hobbies = ['carpentry', 'cocktails', 'cooking', 'camping', 'code'];
-var hobbiesCounter = 0
+var hobbiesCounter = 0;
 
 while(hobbiesCounter < 6){
   var hobbiesAnswer = prompt('Can you guess one of my hobbies?').toLowerCase();
@@ -136,7 +137,7 @@ while(hobbiesCounter < 6){
     console.log(hobbies);
     if(hobbiesAnswer === hobbies[i]){
       alert('Well done! I love ' + hobbiesAnswer);
-      hobbiesCounter = 6
+      hobbiesCounter = 6;
       var correct7=true;
       correctAnswers.push(correct7);
       break;
@@ -146,8 +147,8 @@ while(hobbiesCounter < 6){
   if(hobbiesCounter < 6){
     alert('try again');
   }
-console.log(hobbiesAnswer);
-console.log(hobbiesCounter);
+  console.log(hobbiesAnswer);
+  console.log(hobbiesCounter);
 }
 
 console.log(correctAnswers);
