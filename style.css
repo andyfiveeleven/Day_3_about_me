@@ -1,11 +1,21 @@
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body{
   /*background: linear-gradient(0deg, white, blue);*/
   font-family: georgia;
+  background-color: #fffefa;
   /*background-color: #aaafb7;*/
 }
 
 header{
-  background: linear-gradient(0deg, white, #becfea);
+  background: linear-gradient(0deg, #fffefa, #becfea);
   opacity: 1;
   padding: 10px 40px 10px 40px;
   margin-bottom: 10px;
@@ -41,22 +51,46 @@ main {
 }
 
 main h2 {
+  margin: 20px 0px 10px 0px;
+  border: medium solid #40506b;
   font-size: 35px;
   color: #40506b;
+
 }
 
-main h3{
-  font-size: 20px;
+.resume {
+  list-style-type: none;
+}
+
+
+main h4{
+  font-size: 25px;
   padding: 10px 0px 3px 0px;
-  margin-bottom: 3px;
+  margin: 8px 0px 3px 0px;
   color: #40506b;
 }
 
 main p {
   text-indent: 15px;
-  font-size: 25px;
+  font-size: 20px;
   color: #40506b;
   margin-top: 3px;
+}
+
+ul {
+  list-style-type: none;
+  color: #40506b;
+  font-size: 20px;
+}
+
+.funFacts ol {
+  font-size: 18px;
+  list-style-type: none;
+  color: #40506b;
+}
+
+.funFacts ol li {
+  margin: 10px 0px 10px 0px
 }
 
 footer {
