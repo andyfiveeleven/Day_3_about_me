@@ -14,10 +14,7 @@ var questions = [
 var userAnswers = [];
 var correctCounter = 0;
 
-for (var i = 0; i < questions.length; i++) {
-  var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
-  console.log('user response:', userInput);
-
+function trueFalseforGameOne(userInput) {
   if (userInput === 'yes' || userInput === 'y') {
     userAnswers.push(true);
   } else if (userInput === 'no' || userInput === 'n') {
@@ -26,6 +23,14 @@ for (var i = 0; i < questions.length; i++) {
     alert('You can\'t read!');
     userAnswers.push(0);
   }
+}
+
+for (var i = 0; i < questions.length; i++) {
+  var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
+  console.log('user response:', userInput);
+
+  trueFalseforGameOne(userInput);
+  console.log('user answers array = ', userAnswers);
 }
 
 for (var i = 0; i < userAnswers.length; i++) {
