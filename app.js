@@ -52,7 +52,7 @@ if (school === 'y' || school === 'yes'){
 console.log('School correct? ' + correct4);
 
 
-var food = prompt('Is my favorite food tacos? Y/N').toLowerCase;
+var food = prompt('Is my favorite food tacos? Y/N').toLowerCase();
 
 if (food === 'n' || food === 'no'){
   var correct5 = true;
@@ -97,7 +97,6 @@ while(numberGuess !== number && counter <= 3){
     tries--;
   }else if (number > numberGuess) {
     alert('you guessed too low, try again!');
-    tries = tries - counter;
     counter++;
     alert('You have ' + tries + ' tries left');
     tries--
@@ -138,9 +137,6 @@ console.log(hobbiesAnswer);
 console.log(hobbiesCounter);
 }
 
-if(hobbiesCounter >= 6){
-  alert('out of tries');
-}
 
 var answers = [correct1, correct2, correct3, correct4, correct5, correct6, correct7];
 
