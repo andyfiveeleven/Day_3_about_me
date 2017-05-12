@@ -3,9 +3,9 @@
 var userName = prompt('Hi there! What\'s your name?');
 
 // var userResponse = ['y', 'yes', 'n', 'no'];
-var answerKey = [true, true, false, true, false];
+var game1AnswerKey = [true, true, false, true, false];
 
-var questions = [
+var game1Questions = [
   'Is my name Andy',
   'Am I turning 25 on Thursday the 11th',
   'Was I born in Seattle',
@@ -27,21 +27,27 @@ function trueFalseforGameOne(userInput) {
   }
 }
 
-for (var i = 0; i < questions.length; i++) {
-  var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
-  console.log('user response:', userInput);
 
-  trueFalseforGameOne(userInput);
-  console.log('user answers array = ', userAnswers);
-}
+function yesNoGame(questions, answerKey){
 
-for (var i = 0; i < userAnswers.length; i++) {
-  if (userAnswers[i] === answerKey[i]) {
-    correctCounter++;
+  for (var i = 0; i < questions.length; i++) {
+    var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
+    console.log('user response:', userInput);
+
+    trueFalseforGameOne(userInput);
+    console.log('user answers array = ', userAnswers);
   }
+
+  for (var i = 0; i < userAnswers.length; i++) {
+    if (userAnswers[i] === answerKey[i]) {
+      correctCounter++;
+    }
+  }
+
+  alert('You got ' + correctCounter + '/5 answers correct!');
 }
 
-alert('You got ' + correctCounter + '/5 answers correct!');
+yesNoGame(game1Questions, game1AnswerKey);
 
 var correctAnswers = correctCounter;
 //number guessing game
