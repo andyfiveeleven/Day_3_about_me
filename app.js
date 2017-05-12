@@ -1,6 +1,8 @@
 'use strict';
 
-var userResponse = ['y', 'yes', 'n', 'no'];
+var userName = prompt('Hi there! What\'s your name?');
+
+// var userResponse = ['y', 'yes', 'n', 'no'];
 var answerKey = [true, true, false, true, false];
 
 var questions = [
@@ -39,8 +41,9 @@ for (var i = 0; i < userAnswers.length; i++) {
   }
 }
 
-alert('You got ' + correctCounter + ' answers correct!');
+alert('You got ' + correctCounter + '/5 answers correct!');
 
+var correctAnswers = correctCounter;
 //number guessing game
 
 var numberGuess;
@@ -86,9 +89,9 @@ var hobbiesCounter = 0;
 
 while(hobbiesCounter < 6){
   var hobbiesAnswer = prompt('Can you guess one of my hobbies?').toLowerCase();
-  for(var i=0; i<hobbies.length; i++){
+  for(var e=0; e<hobbies.length; e++){
     console.log(hobbies);
-    if(hobbiesAnswer === hobbies[i]){
+    if(hobbiesAnswer === hobbies[e]){
       alert('Well done! I love ' + hobbiesAnswer);
       hobbiesCounter = 6;
       var correct7=true;
