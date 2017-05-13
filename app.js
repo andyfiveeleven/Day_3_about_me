@@ -1,78 +1,124 @@
 'use strict';
 
-var name = prompt('Is my name Andy? Y/N');
-var ans1 = name.toLowerCase();
+var userName = prompt('Hi there! What\'s your name?');
 
-if (ans1 === 'y'){
-  var correct1 = true;
-}else {
-  var correct1 = false;
-};
+// var userResponse = ['y', 'yes', 'n', 'no'];
+var game1AnswerKey = [true, true, false, true, false];
 
-console.log('Name correct? ' + correct1);
+var game1Questions = [
+  'Is my name Andy',
+  'Am I turning 25 on Thursday the 11th',
+  'Was I born in Seattle',
+  'Did I go to school at Whitman',
+  'Do I like tacos'
+];
 
-var age = prompt('Am I turning 25 on Thursday the 11th? Y/N');
-var ans2 = age.toLowerCase();
+var userAnswers = [];
+var correctCounter = 0;
 
-if (ans2 === 'y'){
-  var correct2 = true;
-}else {
-  var correct2 = false;
-};
+function trueFalseforGameOne(userInput) {
+  if (userInput === 'yes' || userInput === 'y') {
+    userAnswers.push(true);
+  } else if (userInput === 'no' || userInput === 'n') {
+    userAnswers.push(false);
+  } else {
+    alert('You can\'t read!');
+    userAnswers.push(0);
+  }
+}
 
-console.log('Age correct? ' + correct2);
+function yesNoGame(questions, answerKey){
 
-if (correct1 && correct2){
-  alert('Phew! My identity is intact! You got me pegged!');
-}else {
-  alert('You still have a bit to learn about me, my name is Andy and i\'ll soon be 25!');
-};
+  for (var i = 0; i < questions.length; i++) {
+    var userInput = prompt(questions[i] + ' Y/N?').toLowerCase();
+    console.log('user response:', userInput);
 
-alert('Ok, let\s make this a bit harder now.');
+    trueFalseforGameOne(userInput);
+    console.log('user answers array = ', userAnswers);
+  }
 
-var born = prompt('Was I born in Seattle? Y/N');
-var ans3 = born.toLowerCase();
+  for (var i = 0; i < userAnswers.length; i++) {
+    if (userAnswers[i] === answerKey[i]) {
+      correctCounter++;
+    }
+  }
 
-if (ans3 === 'n'){
-  var correct3 = true;
-}else {
-  var correct3 = false;
-};
+  alert('You got ' + correctCounter + '/5 answers correct!');
+}
 
-console.log('Born correct? ' + correct3);
+var shouldWePlay = confirm('Hi ' + userName + ' do you want to play a guessing game?');
 
-var school = prompt('Did I go to school at Whitman? Y/N');
-var ans4 = school.toLowerCase();
+if (shouldWePlay) {
 
-if (ans4 === 'y'){
-  var correct4 = true;
-}else {
-  var correct4 = false;
-};
+  yesNoGame(game1Questions, game1AnswerKey);
 
-console.log('School correct? ' + correct4);
+  var correctAnswers = correctCounter;
+  //number guessing game
 
-var food = prompt('Is my favorite food tacos? Y/N');
-var ans5 = food.toLowerCase();
+  var numberGuess;
+  var number = Math.floor(Math.random() * 10) + 1;
+  var counter = 1 ;
+  var tries = 3;
 
-if (ans5 === 'n'){
-  var correct5 = true;
-}else{
-  var correct5 = false;
-};
+  while(numberGuess !== number && counter <= 3){
+    numberGuess = parseInt(prompt(userName + ', I\'m thinking of a number between one and ten, it\'s random, what do you think?'));
 
-console.log('Food correct? ' + correct5);
+    if (number < numberGuess) {
+      alert('you guessed too high, try again!');
+      counter++;
+      tries--;
+      alert('You have ' + tries + ' tries left');
+    }else if (number > numberGuess) {
+      alert('you guessed too low, try again!');
+      counter++;
+      tries--;
+      alert('You have ' + tries + ' tries left');
+    }else if(number === isNaN){
+      alert('that\'s not a number dumbass, try again,');
+      counter++;
+      tries--;
+      alert('You have ' + tries + ' tries left');
+    }
+  }
 
-if (correct3 && correct4 && correct5){
-  alert('Let\'s see how you did with those harder questions....  You were right! I was born in Minneapolis, I went to school at Whitman, and I like Whiskey just slightly more than tacos!');
-}else{
-  alert('Let\'s see how you did with those harder questions.... You got some things wrong, just to review, I was born in Minneapolis, I went to school at Whitman, and I like Whiskey just slightly more than tacos!' );
-};
+  console.log('counter: ', counter);
 
-if (correct1 && correct2 && correct3 && correct4 && correct5){
-  alert('Wow! You know a lot about me! That\'s kinda creepy!');
-}else if (correct1 || correct2) {
-  alert('Well, at least you got some of the basics right....');
-}else {
-  alert('You didn\'t get much right... Better luck next time bud....');
-};
+  var correct6;
+  if (numberGuess !== number){
+    alert('Fail, you ran out of tries');
+  }else{
+    alert('Wow! You got it right! And you had ' + tries + ' tries left');
+    correct6 = true;
+    correctAnswers.push(correct6);
+  }
+
+  //array guessing game
+  var hobbies = ['carpentry', 'cocktails', 'cooking', 'camping', 'code'];
+  var hobbiesCounter = 0;
+
+  while(hobbiesCounter < 6){
+    var hobbiesAnswer = prompt('Can you guess one of my hobbies?').toLowerCase();
+    for(var e=0; e<hobbies.length; e++){
+      console.log(hobbies);
+      if(hobbiesAnswer === hobbies[e]){
+        alert('Well done! I love ' + hobbiesAnswer);
+        hobbiesCounter = 6;
+        var correct7=true;
+        correctAnswers.push(correct7);
+        break;
+      }
+    }
+    hobbiesCounter++;
+    if(hobbiesCounter < 6){
+      alert('try again');
+    }
+    console.log(hobbiesAnswer);
+    console.log(hobbiesCounter);
+  }
+
+  console.log(correctAnswers);
+
+  var numberCorrect = correctAnswers.length;
+
+  alert('Thanks for taking my quiz ' + userName + '. You got ' + numberCorrect + ' out of 7 correct answers!');
+}
