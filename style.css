@@ -110,6 +110,11 @@ main {
   margin: 30px auto;
 }
 
+.profile-photo {
+  width: 960px;
+  height: 450px;
+}
+
 .break {
   height: 1px;
   width: 100%;
@@ -127,12 +132,18 @@ h2 {
 div.me-block img {
   float: left;
   margin-right: 15px;
+  width: 300px;
+  height: 300px;
   border-radius: 10px;
+  border-bottom: 10px;
+  width: 300px;
+  height: 300px;
 }
 
 div.me-block p {
   font-size: 25px;
   color: #444;
+  margin-bottom: 10px;
 }
 
 .contact-me ul {
@@ -166,7 +177,7 @@ div.me-block p {
 }
 
 .resume ol li p {
-  width: 700px;
+  width: 800px;
   font-size: 20px;
   margin: 10px 0px 10px 20px;
 }
