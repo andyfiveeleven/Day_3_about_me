@@ -88,8 +88,6 @@ if (shouldWePlay) {
     alert('Fail, you ran out of tries');
   }else{
     alert('Wow! You got it right! And you had ' + tries + ' tries left');
-    correct6 = true;
-    correctAnswers.push(correct6);
   }
 
   //array guessing game
@@ -103,8 +101,6 @@ if (shouldWePlay) {
       if(hobbiesAnswer === hobbies[e]){
         alert('Well done! I love ' + hobbiesAnswer);
         hobbiesCounter = 6;
-        var correct7=true;
-        correctAnswers.push(correct7);
         break;
       }
     }
@@ -117,8 +113,4 @@ if (shouldWePlay) {
   }
 
   console.log(correctAnswers);
-
-  var numberCorrect = correctAnswers.length;
-
-  alert('Thanks for taking my quiz ' + userName + '. You got ' + numberCorrect + ' out of 7 correct answers!');
 }
